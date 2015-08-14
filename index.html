@@ -11,25 +11,61 @@
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
+  <link href='http://fonts.googleapis.com/css?family=Parisienne' rel='stylesheet' type='text/css'>
+
   <style>
-    body { overflow: hidden; }
+    body {
+      background-color: black;
+      overflow: hidden;
+    }
     #video {
       position: absolute;
       top: 0px;
-      left: 0px; }
+      left: 0px; 
+    }
+    #footer {
+      visibility: hidden;
+      font-family: 'Parisienne', cursive;
+      font-size: 28pt;
+      color: white;
+      position: fixed;
+      bottom: 0;
+      height: 70px;
+      width: 100%;
+      text-align: center;
+    }
+    #footer ul {
+      margin: 0px;
+      display: inline-table;
+      list-style: none;
+    }
+    #footer ul li {
+      padding-left: 1.5em;
+      padding-right: 1.5em;
+      float: center;
+      position: relative;
+      display: inline;
+    }
   </style>
 </head>
 
 <body>
-  <iframe id="video" src="http://www.youtube.com/embed/VAfeqAYndZY?autoplay=1" frameBorder="0" allowfullscreen></iframe>
+  <iframe id="video" src="http://www.youtube.com/embed/VAfeqAYndZY?autoplay=0" frameBorder="0" allowfullscreen></iframe>
+
+  <div id="footer">
+    <ul>
+      <li>À Propos</li>
+      <li>Contact</li>
+    </ul>
+  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script type="text/javascript">
     $(function(){
-    $('#video').css({ width: $(window).innerWidth() + 'px', height: $(window).innerHeight() + 'px' });
+    $('#video').css({ width: $(window).innerWidth() + 'px', height: ($(window).innerHeight() - 70) + 'px' });
 
     $(window).resize(function(){
-      $('#video').css({ width: $(window).innerWidth() + 'px', height: $(window).innerHeight() + 'px' });
+      $('#video').css({ width: $(window).innerWidth() + 'px', height: ($(window).innerHeight() - 70) + 'px' });
     });
   });
 </script>
